@@ -1,0 +1,65 @@
+﻿
+<div class="row">
+
+<div class="col-6">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Event
+                </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                <partial name="_EventPartial" /> 
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Guests
+                </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                <partial name="_GuestListPartial" />   
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Guests
+                </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                <partial name="_SaveDataSetPartial" />  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="col-6">
+        <pre id="jsonDisplay">
+
+        </pre>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/GuestList.js" asp-append-version="true"></script>
+    <script src="~/js/GuestView.js" asp-append-version="true"></script>
+    <script src="~/js/Templates.js" asp-append-version="true"></script>
+}

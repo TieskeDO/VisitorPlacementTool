@@ -1,0 +1,37 @@
+﻿<form id="guestForm">
+    <div class="form-group">
+        <label for="totalGuests">Total Guests</label>
+        <input type="number" min="1" max="500" class="form-control" id="totalGuests" />
+    </div>
+
+    <div class="form-group">
+        <label for="totalGroups">Total Groups</label>
+        <input type="number" min="0" max="100" class="form-control" id="totalGroups" />
+    </div>
+
+    <ul class="list-group" id="groupTemplateContainer">
+
+    </ul>
+
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+</form>
+
+    <script type="text/template" data-template="groupTemplate">
+        <li id="groupTemplate${i}" class="list-group-item">
+            <h6 class="form-text">Group ${number}</h6>
+
+            <div class="form-group row">
+                <label for="totalMembers${i}" class="col-sm-5 col-form-label">Total</label>
+                <div class="col-sm-7">
+                    <input type="number" min="0" max="100" class="form-control" onchange="editGroup(${i})" id="totalMembers${i}" value="${total}"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="totalAdultMembers${i}" class="col-sm-5 col-form-label">Adults</label>
+                <div class="col-sm-7">
+                    <input type="number" min="0" max="100" class="form-control" onchange="editGroup(${i})" id="totalAdultMembers${i}" value="${adults}" />
+                </div>
+            </div>
+        </li>    
+    </script>

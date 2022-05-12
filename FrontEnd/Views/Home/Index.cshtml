@@ -1,0 +1,16 @@
+﻿
+@model HomeModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @foreach(string s in Model.DataSets)
+    {
+        <h4>@s</h4>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/App.js" asp-append-version="true"></script>
+}
