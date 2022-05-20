@@ -5,10 +5,13 @@
 }
 
 <div class="text-center">
+    <select id="datasetSelector">
+    @if(Model.DataSets != null)
     @foreach(string s in Model.DataSets)
     {
-        <h4>@s</h4>
+        <option value="@s">@s</option>
     }
+    </select>
 </div>
 
 @section Scripts {

@@ -17,12 +17,12 @@ namespace LogicInterfaces
 
         ISection[] Sections { get; }
 
-        /// <summary>
-        /// Adds a section with rows and empty seats
-        /// </summary>
-        /// <param name="rows"></param>
-        /// <param name="seatsPerRow"></param>
-        void AddSection(int rows, int seatsPerRow);
+        ///// <summary>
+        ///// Adds a section with rows and empty seats
+        ///// </summary>
+        ///// <param name="rows"></param>
+        ///// <param name="seatsPerRow"></param>
+        //void AddSection(int rows, int seatsPerRow);
 
         /// <summary>
         /// Fills all the rows and seats with Applicants based on the specified rules

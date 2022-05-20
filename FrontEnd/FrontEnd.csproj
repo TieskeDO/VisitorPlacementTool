@@ -20,4 +20,8 @@
     <ProjectReference Include="..\LogicLayer\LogicLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="dataSets\" />
+  </ItemGroup>
+
 </Project>

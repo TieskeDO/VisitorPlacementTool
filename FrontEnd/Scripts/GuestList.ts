@@ -81,10 +81,22 @@ function randomDateBetween(start: Date, end: Date): Date {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
+class Section {
+    rows: number = 0;
+    seats: number = 0;
+
+    constructor(rows: number, seats: number) {
+        this.rows = rows;
+        this.seats = seats;
+    }
+}
+
 class EventModel {
     private _eventDate: Date;
     private _saleStart: Date;
     private _saleEnd: Date;
+
+    public sections: Section[] = [];
 
     get eventDate(): Date {
         return this._eventDate;

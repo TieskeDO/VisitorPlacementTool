@@ -66,8 +66,17 @@ function randomBirthday(eventDate, isAdult) {
 function randomDateBetween(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
+class Section {
+    constructor(rows, seats) {
+        this.rows = 0;
+        this.seats = 0;
+        this.rows = rows;
+        this.seats = seats;
+    }
+}
 class EventModel {
     constructor(event, start, end) {
+        this.sections = [];
         this._eventDate = event;
         this._saleEnd = end;
         this._saleStart = start;

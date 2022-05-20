@@ -15,4 +15,28 @@
     <input type="date" class="form-control" id="ticketEnd" />
   </div>
 
+      <div class="form-group mb-2">
+    <label for="ticketEnd">Sections</label>
+    <input type="number" class="form-control" id="sectionRows" placeholder="rows"/>
+    <input type="number" class="form-control" id="sectionSeats" placeholder="seats"/>
+    <button class="btn btn-primary" id="addSection">Add Section</button>
+  </div>
+
+  <div class="form-group">
+      
+    <ul id="sections" class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            test section
+            <div class="text-danger">X</div>
+        </li>
+    </ul>
+  </div>
+
 </form>
+
+<script type="text/template" data-template="sectionTemplate">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        Rows: ${rows}, Seats: ${seats}
+        <div class="text-danger">X</div>
+    </li>
+</script>

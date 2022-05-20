@@ -75,4 +75,21 @@ $('#saveForm').submit(e => {
         .done(() => alert("Nice"))
         .fail(err => { err.responseText; });
 });
+// the sections
+$('#addSection').click(e => {
+    e.preventDefault();
+    // check if the values aren't 0 or negative
+    let rows = parseInt($('#sectionRows').val().toString());
+    let seats = parseInt($('#sectionSeats').val().toString());
+    if (rows < 1 || seats < 1)
+        return;
+    // add section
+    eventData.sections.push(new Section(rows, seats));
+    // update visuals
+    $('#sections').empty();
+    console.log(eventData.sections);
+    eventData.sections.forEach(s => {
+        $('#sections').append(LoadFromTemplate("sectionTemplate", s));
+    });
+});
 //# sourceMappingURL=GuestView.js.map

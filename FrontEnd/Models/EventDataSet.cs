@@ -14,6 +14,14 @@ namespace FrontEnd.Models
             public DateTime EventStartDate { get; set; }
             public DateTime TicketSaleStart { get; set; }
             public DateTime TicketSaleEnd { get; set; }
+
+            public SectionTemplate[] Sections { get; set; }
+        }
+
+        public class SectionTemplate
+        {
+            public int Rows { get; set; }
+            public int Seats { get; set; }
         }
 
         public class GuestDataTemplate
