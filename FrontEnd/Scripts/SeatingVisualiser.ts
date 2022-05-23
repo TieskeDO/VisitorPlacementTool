@@ -34,6 +34,7 @@ $('#datasetSelector').change(x => {
                     let seatingId: number = seat + 1;
 
                     seatElement.id = sectionLabel + rowId + '-' + seatingId;
+                    seatElement.setAttribute('onclick', 'displaySeatData("' + seatElement.id + '")'); 
                     seatElement.classList.add('seat');
 
                     // add the seat to the section
@@ -47,9 +48,9 @@ $('#datasetSelector').change(x => {
 
     }).fail(xhr => {
         console.log(xhr);
+    }).always(() => {
+        $('#datasetSelector').prop('enabled', true);
     })
-
-    $('#datasetSelector').prop('enabled', true);
 
 })
 
@@ -64,4 +65,6 @@ function intToAlphabet(num) {
     return s || undefined;
 }
 
-// create an html element that represents the seats
+function displaySeatData(seatId) {
+    console.log('seat ' + seatId + ' was clicked!');
+}

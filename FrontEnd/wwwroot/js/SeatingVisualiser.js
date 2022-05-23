@@ -25,6 +25,7 @@ $('#datasetSelector').change(x => {
                     let seatElement = document.createElement('div');
                     let seatingId = seat + 1;
                     seatElement.id = sectionLabel + rowId + '-' + seatingId;
+                    seatElement.setAttribute('onclick', 'displaySeatData("' + seatElement.id + '")');
                     seatElement.classList.add('seat');
                     // add the seat to the section
                     sectionElement.append(seatElement);
@@ -35,8 +36,9 @@ $('#datasetSelector').change(x => {
         }
     }).fail(xhr => {
         console.log(xhr);
+    }).always(() => {
+        $('#datasetSelector').prop('enabled', true);
     });
-    $('#datasetSelector').prop('enabled', true);
 });
 function intToAlphabet(num) {
     let s = '', t;
@@ -47,5 +49,7 @@ function intToAlphabet(num) {
     }
     return s || undefined;
 }
-// create an html element that represents the seats
+function displaySeatData(seatId) {
+    console.log('seat ' + seatId + ' was clicked!');
+}
 //# sourceMappingURL=SeatingVisualiser.js.map
