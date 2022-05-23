@@ -85,15 +85,12 @@ $('#guestForm').submit(e => {
 $('#saveForm').submit(e => {
     e.preventDefault();
 
-    let postTarget: string = window.location.protocol + "//" + window.location.host;
-    console.log(postTarget);
-
     let dsName: string = $('#dsName').val().toString();
 
     if (dsName === null || dsName.length < 5)
         return;
 
-    $.post(postTarget + "/DataSet/SaveCustomJson", { dataSetName: dsName, event: eventData, guests: finalData })
+    $.post(host + "/DataSet/SaveCustomJson", { dataSetName: dsName, event: eventData, guests: finalData })
         .done(() => alert("Nice"))
         .fail(err => { err.responseText });
 })

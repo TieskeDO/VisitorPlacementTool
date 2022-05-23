@@ -5,15 +5,26 @@
 }
 
 <div class="text-center">
+    @if (Model.DataSets != null) {
     <select id="datasetSelector">
-    @if(Model.DataSets != null)
-    @foreach(string s in Model.DataSets)
-    {
-        <option value="@s">@s</option>
-    }
+
+        
+            @foreach (string s in Model.DataSets)
+            {
+                <option value="@s">@s</option>
+            }
+
     </select>
+     }
+        else
+        {
+            <h3>no datasets yet</h3>
+        }
+    <div class="section-container" id="seatingVisuals">
+    </div>
 </div>
 
 @section Scripts {
-    <script src="~/js/App.js" asp-append-version="true"></script>
+    <script src="~/js/Templates.js" asp-append-version="true"></script>
+    <script src="~/js/SeatingVisualiser.js" asp-append-version="true"></script>
 }

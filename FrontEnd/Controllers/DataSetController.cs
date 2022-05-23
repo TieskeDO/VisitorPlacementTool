@@ -1,11 +1,6 @@
 ﻿using FrontEnd.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LogicLayer;
-using Microsoft.Extensions.Hosting.Internal;
 using System.IO;
 using System.Text.Json;
 
@@ -28,6 +23,20 @@ namespace FrontEnd.Controllers
                 return Ok("dataset saved succesfully");
             }
             catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
+        }
+
+        public IActionResult Read(string filename)
+        {
+            try
+            {
+                string raw = System.IO.File.ReadAllText(Path.Combine("dataSets/" + filename + ".json"));
+
+                return Json(JsonSerializer.Deserialize<EventDataSet>(raw));
+            }
+            catch(Exception ex)
             {
                 return Conflict(ex.Message);
             }

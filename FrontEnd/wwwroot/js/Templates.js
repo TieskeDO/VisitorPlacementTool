@@ -9,4 +9,5 @@ function LoadFromTemplate(templateId, data) {
     // convert the rendered template from string to HTMLElement
     return new DOMParser().parseFromString(itemTpl.map(render(data)).join(''), "text/html").body.innerHTML;
 }
+const host = window.location.protocol + "//" + window.location.host;
 //# sourceMappingURL=Templates.js.map
