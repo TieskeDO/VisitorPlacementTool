@@ -5,15 +5,122 @@
 }
 
 <div class="text-center">
+    @if (Model.DataSets != null) {
     <select id="datasetSelector">
-    @if(Model.DataSets != null)
-    @foreach(string s in Model.DataSets)
-    {
-        <option value="@s">@s</option>
-    }
+
+        
+            @foreach (string s in Model.DataSets)
+            {
+                <option value="@s">@s</option>
+            }
+
     </select>
+     }
+        else
+        {
+            <h3>no datasets yet</h3>
+        }
+    <div class="section-container" id="seatingVisuals">
+        <div class="section" style="grid-template-columns: repeat(4, 1fr);">
+            <!-- row -->
+            <div class="seat" data-trigger="hover" data-toggle="popover" data-content="seatname"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        
+        <div class="section" style="grid-template-columns: repeat(4, 1fr);">
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="section" style="grid-template-columns: repeat(5, 1fr);">
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="section" style="grid-template-columns: repeat(2, 1fr);">
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="section" style="grid-template-columns: repeat(4, 1fr);">
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+
+            <!-- row -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
-    <script src="~/js/App.js" asp-append-version="true"></script>
+    <script src="~/js/Templates.js" asp-append-version="true"></script>
+    <script src="~/js/SeatingVisualiser.js" asp-append-version="true"></script>
 }
